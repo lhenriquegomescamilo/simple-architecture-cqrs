@@ -1,10 +1,16 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5436/postgres
-    username: product-service
-    password: product-service
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: postgres
+  flyway:
+    url: jdbc:postgresql://localhost:5432/postgres
+    user: postgres
+    password: postgres
+    baseline-on-migrate: true
   jpa:
     show-sql: true
-    properties:
-      hibernate:
-        dialect: org.hibernate.spatial.dialect.postgis.PostgisDialect
+
+axon:
+  axonserver:
+    servers: localhost:8124

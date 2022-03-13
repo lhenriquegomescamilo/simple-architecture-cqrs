@@ -3,9 +3,11 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
 	id("org.springframework.boot") version "2.6.4"
 	id("io.spring.dependency-management") version "1.0.11.RELEASE"
+	id("org.flywaydb.flyway") version "8.2.0"
 	kotlin("jvm") version "1.6.10"
 	kotlin("plugin.spring") version "1.6.10"
 	kotlin("plugin.jpa") version "1.6.10"
+	kotlin("kapt") version "1.6.10"
 }
 
 group = "com.camilo"
@@ -31,6 +33,10 @@ dependencies {
 	runtimeOnly("org.postgresql:postgresql")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("io.projectreactor:reactor-test")
+	runtimeOnly("org.flywaydb:flyway-core:8.1.0")
+
+	implementation("org.mapstruct:mapstruct:1.5.0.Beta2")
+	kapt("org.mapstruct:mapstruct-processor:1.5.0.Beta2")
 }
 
 tasks.withType<KotlinCompile> {
