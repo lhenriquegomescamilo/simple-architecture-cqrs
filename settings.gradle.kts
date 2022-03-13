@@ -1,1 +1,1 @@
-rootProject.name = "Product"
+rootProject.name = "simple-architecture-cqrs"
