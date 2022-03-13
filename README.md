@@ -1,5 +1,5 @@
 ### Description
-It's a simple project bases on CQRS architecture
+It's a simple project based on CQRS architecture
 
 
 ### Requirements
