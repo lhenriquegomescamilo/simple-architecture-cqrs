@@ -27,8 +27,8 @@ class ProductCommandController(private val commandGateway: CommandGateway) {
                     price = productRequest.price,
                     quantity = productRequest.quantity
                 )
-                val result = commandGateway.sendAndWait<CreateProductCommand>(productCommand);
-                ServerResponse.ok().bodyValueAndAwait(result)
+                val result = commandGateway.send<CreateProductCommand>(productCommand)
+                ServerResponse.ok().bodyValueAndAwait(mapOf("productId" to productCommand.productId))
             }
         }
     }

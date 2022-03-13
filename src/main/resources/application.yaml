@@ -10,6 +10,8 @@ spring:
     baseline-on-migrate: true
   jpa:
     show-sql: true
+    hibernate:
+      ddl-auto: update
 
 axon:
   axonserver:
