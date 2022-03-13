@@ -1,0 +1,19 @@
+version: "3.7"
+services:
+  product-service:
+    container_name: product-service
+    networks:
+      - default
+    image: postgres:12.4
+    environment:
+      POSTGRES_USER: product-service
+      POSTGRES_PASSWORD: product-service
+    ports:
+      - "5432:5432"
+  axonserver:
+    image: axoniq/axonserver
+    hostname: axonserver
+    ports:
+      - '8024:8024'
+      - '8124:8124'
+      - '8224:8224'
